@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C++基础——函数与类模板 | xia0ji233's blog</title><meta name="author" content="xia0ji233"><meta name="copyright" content="xia0ji233"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++基础——函数模板与类模板 应该就是 C++ 的一个泛型编程了。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C++基础——函数与类模板 | xia0ji233's blog</title><meta name="author" content="xia0ji233"><meta name="copyright" content="xia0ji233"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++基础——函数模板与类模板  应该就是 C++ 的一个泛型编程了。    ## 泛型编程  泛型编程主要是因为这样的一个应用场景：如果我要实现一个数的加法，那么数可以是整数，浮点数，长整数等等等，返回值也可以是这些类的其中一个，排列组合一下可以有很多种组合，但是它们函数内部的功能几乎一模一样，这样的话就会比较繁琐，泛型编程就很好的解决了这一个问题。  比如算竞常用的函数 sort 可以排序，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++基础——函数与类模板">
 <meta property="og:url" content="https://xia0ji233.github.io/2022/12/09/Template1/index.html">
 <meta property="og:site_name" content="xia0ji233&#39;s blog">
-<meta property="og:description" content="C++基础——函数模板与类模板 应该就是 C++ 的一个泛型编程了。">
+<meta property="og:description" content="C++基础——函数模板与类模板  应该就是 C++ 的一个泛型编程了。    ## 泛型编程  泛型编程主要是因为这样的一个应用场景：如果我要实现一个数的加法，那么数可以是整数，浮点数，长整数等等等，返回值也可以是这些类的其中一个，排列组合一下可以有很多种组合，但是它们函数内部的功能几乎一模一样，这样的话就会比较繁琐，泛型编程就很好的解决了这一个问题。  比如算竞常用的函数 sort 可以排序，">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://xia0ji233.github.io/img/avatar.png">
 <meta property="article:published_time" content="2022-12-09T04:00:00.000Z">
@@ -54,7 +54,7 @@
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
-  isToc: true,
+  isToc: false,
   postUpdate: '2022-12-26 18:51:30'
 }</script><script>(win=>{
       win.saveToLocal = {
@@ -152,91 +152,180 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">274</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">173</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-bars"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/backgroud.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="xia0ji233's blog"><span class="site-name">xia0ji233's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-bars"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++基础——函数与类模板</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-09T04:00:00.000Z" title="发表于 2022-12-09 12:00:00">2022-12-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-26T10:51:30.815Z" title="更新于 2022-12-26 18:51:30">2022-12-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/%E6%A8%A1%E6%9D%BF/">模板</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++基础——函数与类模板"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>C++基础——函数模板与类模板</p>
-<p>应该就是 C++ 的一个泛型编程了。</p>
-<span id="more"></span>
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">274</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">173</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-bars"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/backgroud.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="xia0ji233's blog"><span class="site-name">xia0ji233's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-bars"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++基础——函数与类模板</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-09T04:00:00.000Z" title="发表于 2022-12-09 12:00:00">2022-12-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-26T10:51:30.815Z" title="更新于 2022-12-26 18:51:30">2022-12-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/%E6%A8%A1%E6%9D%BF/">模板</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">281</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++基础——函数与类模板"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container">
+C++基础——函数模板与类模板
 
-<h2 id="泛型编程"><a href="#泛型编程" class="headerlink" title="泛型编程"></a>泛型编程</h2><p>泛型编程主要是因为这样的一个应用场景：如果我要实现一个数的加法，那么数可以是整数，浮点数，长整数等等等，返回值也可以是这些类的其中一个，排列组合一下可以有很多种组合，但是它们函数内部的功能几乎一模一样，这样的话就会比较繁琐，泛型编程就很好的解决了这一个问题。</p>
-<p>比如算竞常用的函数 sort 可以排序，它能排很多种数据类型，只要数据类型支持小于号，那么就可以使用 sort，就算没有小于号我们也可以重载小于号使用。</p>
-<h3 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;<span class="comment">//古老版本中没有 typename 关键字，用的是 class，效果一样</span></span><br><span class="line"><span class="function">T <span class="title">add</span><span class="params">(T a, T b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">add</span>(<span class="number">1</span>, <span class="number">2</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">add</span>(<span class="number">1.2</span>, <span class="number">2.6</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">add</span>((std::string)<span class="string">&quot;hello&quot;</span>,(std::string)<span class="string">&quot; world&quot;</span>) &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+应该就是 C++ 的一个泛型编程了。
 
-<p>我们先用一句 <code>template&lt;typename T&gt;</code> 去声明一个模板类型 T，然后再定义一个函数，这里我们让两个参数和返回值一致，使用模板类型，内部调用 + 返回即可，结果也是可以正常运行的。</p>
-<p>其实这个模板只是一个模板，真正调用的时候会根据用到的情况去实例化一个具体的函数，比如这里我用到了 int float 和 string 类的 add 函数我就会在编译的时候根据模板生成这三个函数，分别对应了类型。</p>
-<p>调试一下也可以看到</p>
-<img src="/2022/12/09/Template1/1.png" class="">
+<!--more-->
 
-<p>在整型调用的时候，call 的是 <code>add&lt;int&gt;</code> 函数，而浮点调用，call 的是 <code>add&lt;double&gt;</code> 函数，因此模板的作用是基于一个规则自适应地生成函数。</p>
-<p>我们也可以显示地去调用指定类型的模板，比如：<code>add&lt;int&gt;(1,2)</code> ，在这里 <code>&lt;&gt;</code> 中的类型会替换里面所有的 T 类型实例化出一个具体的对象，如果对象不支持模板里的一些操作，那么它会在编译阶段报出错误。</p>
-<p>以上的函数模板有一个缺点，就是说你的两个参数必须同一类型，也就是说调用 <code>add(1,1.5)</code> 会报错，那么为了解决这个问题，我们有以下的解决方案：</p>
-<ul>
-<li>强制类型转换：这个应该都能想到，把它转成相同的就可以调用了。</li>
-<li>显示指定类型：这个我们指定函数类型，若参数类型不符则在传参时候会自动强制转换。</li>
-<li>模板重载：这个有点意思了，我们可以定义两个不同的 typename，这样的话即使两个类型不一样也可以支持了，但是前提是里面的操作需要支持我们调用时的类，<code>template&lt;typename T1,typename T2&gt;</code>。</li>
-<li>非类型模板参数：我们可以在模板中定义参数，然后调用的时候在尖括号中传入。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">T <span class="title">add</span><span class="params">(T a, T b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="type">int</span> num&gt;</span></span><br><span class="line"><span class="function">T <span class="title">add</span><span class="params">(T val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> val + num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">add</span>(<span class="number">1</span>, <span class="number">2</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">add</span>(<span class="number">1.2</span>, <span class="number">2.6</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">add</span>((std::string)<span class="string">&quot;hello&quot;</span>,(std::string)<span class="string">&quot; world&quot;</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">add</span>&lt;<span class="type">float</span>,<span class="number">2</span>&gt;(<span class="number">1.5</span>) &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+## 泛型编程
 
-<p>运行之后可以发现没什么问题，函数正常调用并返回了正确的结果。</p>
-<p>但是在模板列表中传参只能传 int 型的，类对象和浮点型不行。</p>
-<h3 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h3><p>这里就跟我们平时用到的 STL 库差不多了，声明方法和函数差不多，在类定义前声明一个模板类型，然后类内用模板类型的地方都会被替换成对应的显示类型，并且声明类的时候不支持隐式调用，因为它并不不能揣测你的内心想法。</p>
-<p>demo</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">A</span>(T val) &#123;</span><br><span class="line">        std::cout &lt;&lt; val &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">A</span>() &#123;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+泛型编程主要是因为这样的一个应用场景：如果我要实现一个数的加法，那么数可以是整数，浮点数，长整数等等等，返回值也可以是这些类的其中一个，排列组合一下可以有很多种组合，但是它们函数内部的功能几乎一模一样，这样的话就会比较繁琐，泛型编程就很好的解决了这一个问题。
 
-<p>我们实例化它也比较简单，跟STL差不多。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">A&lt;<span class="type">int</span>&gt; <span class="title">s</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="function">A&lt;std::string&gt; <span class="title">g</span><span class="params">((std::string)<span class="string">&quot;hello world&quot;</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+比如算竞常用的函数 sort 可以排序，它能排很多种数据类型，只要数据类型支持小于号，那么就可以使用 sort，就算没有小于号我们也可以重载小于号使用。
 
-<h4 id="模板全特化"><a href="#模板全特化" class="headerlink" title="模板全特化"></a>模板全特化</h4><p>有时候，我们希望某些类在被调调用的时候特殊处理，那么我们可以声明一个特化模板。</p>
-<p>定义方法如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&lt;std::string&gt;</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">A</span>(std::string val) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;special:&quot;</span> &lt;&lt; val &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">A</span>() &#123;&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+### 函数模板
 
-<p>这样的话定义出来单独的类就会走新的调用空间了，我们上面调用 std::string 类的时候也会调用这里我们定义的函数。</p>
-<h4 id="模板偏特化"><a href="#模板偏特化" class="headerlink" title="模板偏特化"></a>模板偏特化</h4><p>我们对主模板重定义</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1,<span class="keyword">typename</span> T2&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">A</span>(T val) &#123;</span><br><span class="line">        std::cout &lt;&lt; val &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">A</span>() &#123;&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+```C++
+#include<iostream>
+#include<string>
+template<typename T>//古老版本中没有 typename 关键字，用的是 class，效果一样
+T add(T a, T b) {
+    return a + b;
+}
 
-<p>然后呢为它再特化一个模板，特化条件是两个类型相同。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&lt;T,T&gt;</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">A</span>(T val1) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;偏特化&quot;</span> &lt;&lt; val1 &lt;&lt; std::endl;</span><br><span class="line">    &#125;;</span><br><span class="line">    ~<span class="built_in">A</span>() &#123;&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+int main() {
+    std::cout << add(1, 2) << std::endl;
+    std::cout << add(1.2, 2.6) << std::endl;
+    std::cout << add((std::string)"hello",(std::string)" world") << std::endl;
+}
+```
 
-<p>然后分别调用一下来看看</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">A&lt;<span class="type">int</span>,<span class="type">int</span>&gt; <span class="title">s</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="function">A&lt;std::string,<span class="type">int</span>&gt; <span class="title">g</span><span class="params">((std::string)<span class="string">&quot;hello world&quot;</span>)</span></span>;</span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line"><span class="comment">//偏特化1</span></span><br><span class="line"><span class="comment">//hello world</span></span><br></pre></td></tr></table></figure>
+我们先用一句 `template<typename T>` 去声明一个模板类型 T，然后再定义一个函数，这里我们让两个参数和返回值一致，使用模板类型，内部调用 + 返回即可，结果也是可以正常运行的。
 
-<p>与函数一样，可以定义缺省，缺省其实就是默认参数，没传，它的值就是你给的默认值，你传了，用的就是你传的值。就像python里面的 int 函数，它有第二个参数表示是几进制的，你不传默认是十进制，你传了多少就是多少进制的，缺省参数必须在形参列表结尾。</p>
-<p>demo</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1,<span class="keyword">typename</span> T2=<span class="type">int</span>&gt;</span><br><span class="line"><span class="keyword">class</span> A</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">A</span>(T1 val) &#123;</span><br><span class="line">        std::cout &lt;&lt; val &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">A</span>() &#123;&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+其实这个模板只是一个模板，真正调用的时候会根据用到的情况去实例化一个具体的函数，比如这里我用到了 int float 和 string 类的 add 函数我就会在编译的时候根据模板生成这三个函数，分别对应了类型。
 
-<p>与函数模板一样，里面也可以传 非类型模板参数，用法和函数模板一致，会基于参数生成不同的实例化类。</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://xia0ji233.github.io">xia0ji233</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://xia0ji233.github.io/2022/12/09/Template1/">https://xia0ji233.github.io/2022/12/09/Template1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xia0ji233.github.io" target="_blank">xia0ji233's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/11/Template2/" title="C++基础——函数与类模板的一些细节"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++基础——函数与类模板的一些细节</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/08/OOP6/" title="C++面向对象基础——函数与对象总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++面向对象基础——函数与对象总结</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><a href="/"> <div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div></a><div class="author-info__name">xia0ji233</div><div class="author-info__description">Nepnep team</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">274</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">173</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xia0ji233"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xia0ji233" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xia0ji233@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">老当益壮，宁移白首之心？穷且益坚，不坠青云之志。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">泛型编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.1.</span> <span class="toc-text">函数模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.2.</span> <span class="toc-text">类模板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%85%A8%E7%89%B9%E5%8C%96"><span class="toc-number">1.2.1.</span> <span class="toc-text">模板全特化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%81%8F%E7%89%B9%E5%8C%96"><span class="toc-number">1.2.2.</span> <span class="toc-text">模板偏特化</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/30/tencent-race-2020-pre/" title="腾讯游戏安全大赛2020初赛题解">腾讯游戏安全大赛2020初赛题解</a><time datetime="2024-03-29T17:00:00.000Z" title="发表于 2024-03-30 01:00:00">2024-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/21/tencent-race-2022-final/" title="腾讯游戏安全大赛2022决赛题解">腾讯游戏安全大赛2022决赛题解</a><time datetime="2024-03-21T15:00:00.000Z" title="发表于 2024-03-21 23:00:00">2024-03-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/19/tencent-race-2022-pre/" title="腾讯游戏安全大赛2022初赛题解">腾讯游戏安全大赛2022初赛题解</a><time datetime="2024-03-19T15:00:00.000Z" title="发表于 2024-03-19 23:00:00">2024-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/13/CVE-2021-4145/" title="dirty cred(CVE-2021-4145)漏洞复现">dirty cred(CVE-2021-4145)漏洞复现</a><time datetime="2024-03-13T15:00:00.000Z" title="发表于 2024-03-13 23:00:00">2024-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/04/LLVM5/" title="LLVM——交叉编译的配置">LLVM——交叉编译的配置</a><time datetime="2024-03-04T12:00:00.000Z" title="发表于 2024-03-04 20:00:00">2024-03-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2024 By xia0ji233</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">welcome to my blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      tags: 'ams'
-    },
-    chtml: {
-      scale: 1.1
-    },
-    options: {
-      renderActions: {
-        findScript: [10, doc => {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/)
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
-            const text = document.createTextNode('')
-            node.parentNode.replaceChild(text, node)
-            math.start = {node: text, delim: '', n: 0}
-            math.end = {node: text, delim: '', n: 0}
-            doc.math.push(math)
-          }
-        }, '']
-      }
+调试一下也可以看到
+
+![](Template1/1.png)
+
+在整型调用的时候，call 的是 `add<int>` 函数，而浮点调用，call 的是 `add<double>` 函数，因此模板的作用是基于一个规则自适应地生成函数。
+
+我们也可以显示地去调用指定类型的模板，比如：`add<int>(1,2)` ，在这里 `<>` 中的类型会替换里面所有的 T 类型实例化出一个具体的对象，如果对象不支持模板里的一些操作，那么它会在编译阶段报出错误。
+
+以上的函数模板有一个缺点，就是说你的两个参数必须同一类型，也就是说调用 `add(1,1.5)` 会报错，那么为了解决这个问题，我们有以下的解决方案：
+
+- 强制类型转换：这个应该都能想到，把它转成相同的就可以调用了。
+- 显示指定类型：这个我们指定函数类型，若参数类型不符则在传参时候会自动强制转换。
+- 模板重载：这个有点意思了，我们可以定义两个不同的 typename，这样的话即使两个类型不一样也可以支持了，但是前提是里面的操作需要支持我们调用时的类，`template<typename T1,typename T2>`。
+- 非类型模板参数：我们可以在模板中定义参数，然后调用的时候在尖括号中传入。
+
+```C++
+#include<iostream>
+#include<string>
+template<typename T>
+T add(T a, T b) {
+    return a + b;
+}
+template<typename T, int num>
+T add(T val) {
+    return val + num;
+}
+
+int main() {
+    std::cout << add(1, 2) << std::endl;
+    std::cout << add(1.2, 2.6) << std::endl;
+    std::cout << add((std::string)"hello",(std::string)" world") << std::endl;
+    std::cout << add<float,2>(1.5) << std::endl;
+}
+```
+
+运行之后可以发现没什么问题，函数正常调用并返回了正确的结果。
+
+但是在模板列表中传参只能传 int 型的，类对象和浮点型不行。
+
+### 类模板
+
+这里就跟我们平时用到的 STL 库差不多了，声明方法和函数差不多，在类定义前声明一个模板类型，然后类内用模板类型的地方都会被替换成对应的显示类型，并且声明类的时候不支持隐式调用，因为它并不不能揣测你的内心想法。
+
+demo
+
+```C++
+template<typename T>
+class A
+{
+public:
+    A(T val) {
+        std::cout << val << std::endl;
     }
-  }
-  
-  const script = document.createElement('script')
-  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
-  script.id = 'MathJax-script'
-  script.async = true
-  document.head.appendChild(script)
-} else {
-  MathJax.startup.document.state(0)
-  MathJax.texReset()
-  MathJax.typesetPromise()
-}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
+    ~A() {};
+};
+
+```
+
+我们实例化它也比较简单，跟STL差不多。
+
+```C++
+A<int> s(1);
+A<std::string> g((std::string)"hello world");
+```
+
+#### 模板全特化
+
+有时候，我们希望某些类在被调调用的时候特殊处理，那么我们可以声明一个特化模板。
+
+定义方法如下：
+
+```C++
+template<>
+class A<std::string>
+{
+public:
+    A(std::string val) {
+        std::cout << "special:" << val << std::endl;
+    }
+    ~A() {};
+};
+```
+
+这样的话定义出来单独的类就会走新的调用空间了，我们上面调用 std::string 类的时候也会调用这里我们定义的函数。
+
+#### 模板偏特化
+
+我们对主模板重定义
+
+```C++
+template<typename T1,typename T2>
+class A
+{
+public:
+    A(T val) {
+        std::cout << val << std::endl;
+    }
+    ~A() {};
+};
+```
+
+然后呢为它再特化一个模板，特化条件是两个类型相同。
+
+```C++
+template<typename T>
+class A<T,T>
+{
+public:
+    A(T val1) {
+        std::cout << "偏特化" << val1 << std::endl;
+    };
+    ~A() {};
+};
+```
+
+然后分别调用一下来看看
+
+```C++
+A<int,int> s(1);
+A<std::string,int> g((std::string)"hello world");
+//运行结果：
+//偏特化1
+//hello world
+```
+
+与函数一样，可以定义缺省，缺省其实就是默认参数，没传，它的值就是你给的默认值，你传了，用的就是你传的值。就像python里面的 int 函数，它有第二个参数表示是几进制的，你不传默认是十进制，你传了多少就是多少进制的，缺省参数必须在形参列表结尾。
+
+demo
+
+```C++
+template<typename T1,typename T2=int>
+class A
+{
+public:
+    A(T1 val) {
+        std::cout << val << std::endl;
+    }
+    ~A() {};
+};
+```
+
+与函数模板一样，里面也可以传 非类型模板参数，用法和函数模板一致，会基于参数生成不同的实例化类。
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://xia0ji233.github.io">xia0ji233</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://xia0ji233.github.io/2022/12/09/Template1/">https://xia0ji233.github.io/2022/12/09/Template1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xia0ji233.github.io" target="_blank">xia0ji233's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/11/Template2/" title="C++基础——函数与类模板的一些细节"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++基础——函数与类模板的一些细节</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/08/OOP6/" title="C++面向对象基础——函数与对象总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++面向对象基础——函数与对象总结</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><a href="/"> <div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div></a><div class="author-info__name">xia0ji233</div><div class="author-info__description">Nepnep team</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">274</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">173</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xia0ji233"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xia0ji233" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xia0ji233@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">老当益壮，宁移白首之心？穷且益坚，不坠青云之志。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/30/tencent-race-2020-pre/" title="腾讯游戏安全大赛2020初赛题解">腾讯游戏安全大赛2020初赛题解</a><time datetime="2024-03-29T17:00:00.000Z" title="发表于 2024-03-30 01:00:00">2024-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/21/tencent-race-2022-final/" title="腾讯游戏安全大赛2022决赛题解">腾讯游戏安全大赛2022决赛题解</a><time datetime="2024-03-21T15:00:00.000Z" title="发表于 2024-03-21 23:00:00">2024-03-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/19/tencent-race-2022-pre/" title="腾讯游戏安全大赛2022初赛题解">腾讯游戏安全大赛2022初赛题解</a><time datetime="2024-03-19T15:00:00.000Z" title="发表于 2024-03-19 23:00:00">2024-03-19</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/13/CVE-2021-4145/" title="dirty cred(CVE-2021-4145)漏洞复现">dirty cred(CVE-2021-4145)漏洞复现</a><time datetime="2024-03-13T15:00:00.000Z" title="发表于 2024-03-13 23:00:00">2024-03-13</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/04/LLVM5/" title="LLVM——交叉编译的配置">LLVM——交叉编译的配置</a><time datetime="2024-03-04T12:00:00.000Z" title="发表于 2024-03-04 20:00:00">2024-03-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2024 By xia0ji233</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">welcome to my blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
