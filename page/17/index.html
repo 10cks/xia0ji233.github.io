@@ -53,7 +53,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-04-09 13:23:32'
+  postUpdate: '2024-04-09 13:34:51'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -150,252 +150,150 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">274</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">173</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-bars"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/backgroud.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="xia0ji233's blog"><span class="site-name">xia0ji233's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-bars"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">xia0ji233's blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/xia0ji233" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xia0ji233@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/10/08/Linux_Signal/" title="Linux Signal机制">Linux Signal机制</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-08T07:00:00.000Z" title="发表于 2022-10-08 15:00:00">2022-10-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/C/">C</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/C/signal/">signal</a></span></div><div class="content">
-今天吧，来具体了解一下 Linux 的一个 signal 机制。
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">274</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">173</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-bars"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/backgroud.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="xia0ji233's blog"><span class="site-name">xia0ji233's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-bars"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">xia0ji233's blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/xia0ji233" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xia0ji233@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/10/08/Linux_Signal/" title="Linux Signal机制">Linux Signal机制</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-08T07:00:00.000Z" title="发表于 2022-10-08 15:00:00">2022-10-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/C/">C</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/C/signal/">signal</a></span></div><div class="content">今天吧，来具体了解一下 Linux 的一个 signal 机制。
 
+问题引入
+起因在于我向老师抛出一个问题，在 子进程调用 execve
+并重定向标准输出为管道时，父进程从管道读取数据时，采用 read
+函数去读取，但是会发现一个问题。就是读和写不太能同步，即使程序退出，管道中还残留数据，如果管道中的数据还有，那么我读入不完整，如果没，则继续调用
+read 会挂起父进程无法退出，一直想不到有效的办法解决。
+请教老师之后，老师推荐我学学 signal
+机制，并给我看了一个例程，例程大致简化一下是这样的：
+123456789101112131415161718192021222324252627#include&lt;stdio.h&gt;#include&lt;unistd.h&gt;int k;void func(int sig)&#123;    k=0;&#125;int main()&#123;    pid_t pid=fork();    if(pid&lt;0)&#123;        write(2,&quot;fork error!\n&quot;, ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/10/08/Hook6-HW%20hook/" title="Hook专题6- hook">Hook专题6- hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-08T02:00:00.000Z" title="发表于 2022-10-08 10:00:00">2022-10-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">今天学一学 hook 专题最后一章，也就是 无痕 hook。
 
-
-## 问题引入
-
-起因在于我向老师抛出一个问题，在 子进程调用 execve 并重定向标准输出为管道时，父进程从管道读取数据时，采用 read 函数去读取，但是会发现一个问题。就是读和写不太能同步，即使程序退出，管道中还残留数据，如果管道中的数据还有，那么我读入不完整，如果没，则继续调用 read 会挂起父进程无法退出，一直想不到有效的办法解决。
-
-请教老师之后，老师推荐我学学 signal 机制，并给我看了一个例程，例程大致简化一下是这样的：
-
-```c++
-#include
-#include
-int k;
-void func(int sig){
-    k=0;
-}
-int main(){
-    pid_t pid=fork();
-    if(pid</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/10/08/Hook6-HW%20hook/" title="Hook专题6- hook">Hook专题6- hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-08T02:00:00.000Z" title="发表于 2022-10-08 10:00:00">2022-10-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">
-今天学一学 hook 专题最后一章，也就是 无痕 hook。
-
-
-
-## 学习笔记
-
-这个无痕 hook 是相对无痕，而不是没有方法检测。因为前面的五种 hook 方法可以在完整性检查中直接被检测出来，但是无痕 hook 是通过硬断+VEH的方式 hook 的。内存完整性检查能完美 bypass。
-
+学习笔记
+这个无痕 hook 是相对无痕，而不是没有方法检测。因为前面的五种 hook
+方法可以在完整性检查中直接被检测出来，但是无痕 hook 是通过硬断+VEH的方式
+hook 的。内存完整性检查能完美 bypass。
 硬件断点在之前的 kxbook 中讲过，是通过 DR 寄存器来实现的。
 
-![](Hook6-HW%20hook/1.png)
-
-### DR寄存器的用途
-
-####  DR0-DR3
-
+DR寄存器的用途
+DR0-DR3
 DR0到DR3被称为“调试地址寄存器”或“地址断点寄存器”，它们非常简单，其中仅包含断点的线性地址。当该地址与指令或数据引用匹配时，将发生中断。调试寄存器DR7可用于对每个断点的条件进行更细粒度的控制。因为寄存器需要填充线性地址，所以即使关闭分页，它们也可以正常工作。在这种情况下，线性地址将与物理地址相同。
-
 由于这些寄存器中只有4个是可用的，因此每个线程最多只能同时具有4个断点。
+DR4-DR5
+DR4和DR5被称为“保留的调试寄存器”。尽管它们的名称中有“保留”字样，但实际上却不总是保留的，仍然可以使用。它们的功能取决于控制寄存器CR4中DE字段的值。在启用此位后，将启 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/10/07/Hook5-VEH%20hook/" title="Hook专题5-VEH hook">Hook专题5-VEH hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-07T10:00:00.000Z" title="发表于 2022-10-07 18:00:00">2022-10-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">学一学 hook 专题，今天是 VEH hook。
 
-#### DR4-DR5
-
-DR4和DR5被称为“保留的调试寄存器”。尽管它们的名称中有“保留”字样，但实际上却不总是保 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/10/07/Hook5-VEH%20hook/" title="Hook专题5-VEH hook">Hook专题5-VEH hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-07T10:00:00.000Z" title="发表于 2022-10-07 18:00:00">2022-10-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">
-学一学 hook 专题，今天是 VEH hook。
-
-
-
-## 学习笔记
-
+学习笔记
 今天学了比较新的一个 hook 的姿势：利用异常处理去hook。
+前置芝士
+SEH
+SEH 即 结构化异常处理(Structure Exception
+Handler)，是Windows操作系统提供的强大异常处理功能。当程序执行过程中发生异常时，零环会使用KiDispatchException判断是否有内核调试器。如果没有调试器，零环转交给三环的KiDispatchException，开始找是否有异常处理程序（SEH、VEH）。如果已安装，会调用异常处理程序进行处理
 
-### 前置芝士
-
-#### SEH
-
-SEH 即 结构化异常处理(Structure Exception Handler)，是Windows操作系统提供的强大异常处理功能。当程序执行过程中发生异常时，零环会使用`KiDispatchException`判断是否有内核调试器。如果没有调试器，零环转交给三环的`KiDispatchException`，开始找是否有异常处理程序（SEH、VEH）。如果已安装，会调用异常处理程序进行处理
-
-> 异常处理流程：异常产生->调试器->VEH->SEH->TopLevelEH->调试器
+异常处理流程：异常产生-&gt;调试器-&gt;VEH-&gt;SEH-&gt;TopLevelEH-&gt;调试器
 
 SEH有很多缺点（基于线程、基于栈、处理优先级低）等等。
+VEH
+向量化异常处理(Vectored Exception
+Handler)，我们可以用AddVectoredExceptionHandler函数注册自定义的VEH。当捕获到异常时，我们会拿到一个_EXCEPTION_POINTERS类型的参数。而这个参 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/10/06/Hook4-Hotfix%20hook/" title="Hook专题4-hotfix hook">Hook专题4-hotfix hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-06T10:00:00.000Z" title="发表于 2022-10-06 18:00:00">2022-10-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">学一学 hook 专题，今天是 hotfix hook。
 
-#### VEH
-
-向量化异常处理(Vectored Exception Handler)，我们可以用`AddVectoredExceptionHandler`函数注册自定义的VEH。当捕获到异常时，我们会拿到一个[_EXCEPTION_POINTERS](ht ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/10/06/Hook4-Hotfix%20hook/" title="Hook专题4-hotfix hook">Hook专题4-hotfix hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-06T10:00:00.000Z" title="发表于 2022-10-06 18:00:00">2022-10-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">
-学一学 hook 专题，今天是 hotfix hook。
-
-
-
-## 学习笔记
-
-hotfix hook和 inline hook差不多，但是有利用条件，一是被hook的位置附近有空内存，那么可以直接把被 hook 函数的代码先短跳到附近内存，然后由这个内存跳转到我们自己的函数，这样的话就不需要频繁地装钩卸钩了。
-
+学习笔记
+hotfix hook和 inline
+hook差不多，但是有利用条件，一是被hook的位置附近有空内存，那么可以直接把被
+hook
+函数的代码先短跳到附近内存，然后由这个内存跳转到我们自己的函数，这样的话就不需要频繁地装钩卸钩了。
 也直接试试吧
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172#include &lt;stdio.h&gt;#include &lt;Windows.h&gt;typedef int(WINAPI    * fnMessageBoxA)(        _In_opt_ HWND hWnd,        _In_opt_ LPCSTR lpText,        _In_opt_ LPCSTR lpCaption,        _In_ UINT ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/10/02/Hook3-virtual%20hook/" title="Hook专题3-virtual hook">Hook专题3-virtual hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-02T10:00:00.000Z" title="发表于 2022-10-02 18:00:00">2022-10-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">学一学 hook 专题，今天是 virtual hook。
 
-```c++
-#include 
-#include 
+前置芝士
+早就听说 C++ 因面向对象而闻名，然而我们平时在算法比赛中使用的 C++
+却几乎没有面向对象的内容，C++
+的类中有一个非常厉害的东西叫虚函数，C++中的虚函数的作用主要是实现了多态的机制，多态，简而言之就是用父类型别的指针指向其子类的实例，然后通过父类的指针调用实际子类的成员函数。
+这是一种泛型技术，所谓泛型技术就是试图使用不变的代码来实现可变的算法。比如
+平常的排序，排序的东西种类有很多，我们如果都为此写一个 sort
+函数，那太过于麻烦，泛型技术就解决了这种麻烦，比如
+std::sort，它可以通过自定义比较规则的方式来实现多种类型的数据都能使用这个
+std::sort，只要你为数据类型重载了小于号即可。
+test
+12345678910111213141516171819#include &lt;iostream&gt;using namespace std;class Base &#123;public:    virtual void f() &#123; cout &lt;& ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/30/Hook2-IAT%20hook/" title="Hook专题2-IAT hook">Hook专题2-IAT hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-30T10:00:00.000Z" title="发表于 2022-09-30 18:00:00">2022-09-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">学一学 hook 专题，今天是 IAT hook。
 
-typedef int
-(WINAPI
-    * fnMessageBoxA)(
-        _In_opt_ HWND hWnd,
-        _In_opt_ LPCSTR lpText,
-        _In_opt_ LPCSTR lpCaption,
-        _In_ UINT uType);
-
-int
-WINAPI
-MyMessageBoxA(
-    _In_opt_ HWND hWnd,
-    _In_opt_ LPCSTR lpText,
-    _In_opt_ LPCSTR lpCaption,
-    _In_ UINT uType)
-{
-    fnMe ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/10/02/Hook3-virtual%20hook/" title="Hook专题3-virtual hook">Hook专题3-virtual hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-02T10:00:00.000Z" title="发表于 2022-10-02 18:00:00">2022-10-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">
-学一学 hook 专题，今天是 virtual hook。
-
-
-
-## 前置芝士
-
-早就听说 C++ 因面向对象而闻名，然而我们平时在算法比赛中使用的 C++ 却几乎没有面向对象的内容，C++ 的类中有一个非常厉害的东西叫**虚函数**，C++中的虚函数的作用主要是实现了多态的机制，多态，简而言之就是**用父类型别的指针指向其子类的实例**，然后**通过父类的指针调用实际子类的成员函数**。
-
-这是一种泛型技术，所谓泛型技术就是试图使用不变的代码来实现可变的算法。比如 平常的排序，排序的东西种类有很多，我们如果都为此写一个 sort 函数，那太过于麻烦，泛型技术就解决了这种麻烦，比如 std::sort，它可以通过自定义比较规则的方式来实现多种类型的数据都能使用这个 std::sort，只要你为数据类型重载了小于号即可。
-
-### test
-
-```c++
-#include 
-
-using namespace std;
-
-class Base {
-public:
-    virtual void f() { cout < "Base::f()" < endl; }
-    virtu ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/09/30/Hook2-IAT%20hook/" title="Hook专题2-IAT hook">Hook专题2-IAT hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-30T10:00:00.000Z" title="发表于 2022-09-30 18:00:00">2022-09-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">
-学一学 hook 专题，今天是 IAT hook。
-
-
-
-## 课堂笔记
-
-### IAT
-
-IAT 就是 Import Address Table，导入地址表，其实感觉跟 Linux ELF 的全局偏量表（GOT）是一样一样的，IAT hook 原理就很简单，我们只需要改写这个表到我们自己的函数，如果需要执行原函数的逻辑，那么我在 hook 的时候保存 IAT 的初始值，直接 call 过去即可。
-
-### hook步骤
-
-我们需要分析 PE 文件头，先拿到 IAT 表的一个位置，然后拿到该函数的偏移，去改写它。
-
-那么我们先获取一个 PE DOS HEADER，使用 API GetModuleHandle 第一个参数传 NULL 可以获取该 PE 文件的 DOS 头。再从这个 DOS 头里面获取 NT 头，从 NT 头拿扩展头。有了扩展头之后，我们就能找到 IAT 了。
-
-因为一个 PE 文件，他可能有很多模块，也就是很多的 IAT，因此我们后面需要遍历所有的 IAT，找到了 MessageBoxA 进行一个替换。
-
+课堂笔记
+IAT
+IAT 就是 Import Address Table，导入地址表，其实感觉跟 Linux ELF
+的全局偏量表（GOT）是一样一样的，IAT hook
+原理就很简单，我们只需要改写这个表到我们自己的函数，如果需要执行原函数的逻辑，那么我在
+hook 的时候保存 IAT 的初始值，直接 call 过去即可。
+hook步骤
+我们需要分析 PE 文件头，先拿到 IAT
+表的一个位置，然后拿到该函数的偏移，去改写它。
+那么我们先获取一个 PE DOS HEADER，使用 API GetModuleHandle
+第一个参数传 NULL 可以获取该 PE 文件的 DOS 头。再从这个 DOS 头里面获取
+NT 头，从 NT 头拿扩展头。有了扩展头之后，我们就能找到 IAT 了。
+因为一个 PE 文件，他可能有很多模块，也就是很多的
+IAT，因此我们后面需要遍历所有的 IAT，找到了 MessageBoxA
+进行一个替换。
 dllmain.cpp
+1234567891011121314151 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/29/Hook1-inline%20hook/" title="Hook专题1-inline hook">Hook专题1-inline hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-29T10:00:00.000Z" title="发表于 2022-09-29 18:00:00">2022-09-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">学一学 hook 专题，今天是 inline hook。
 
-```cpp
-#include
+课堂笔记
+hook概念
+hook
+就是钩子，是一种劫持技术，把原本执行的函数替换，替换为我自己的一个函数。当然在学
+pwn 的时候，也有接触过 hook，就是 malloc_hook 和 free_hook。这些 hook
+本意是为了开发者方便调试自己编写的 malloc 或者 free
+函数去使用的，比如我自己写了一个 free 函数，我想测试一下性能，那我直接
+**__free_hook=myfree** 就可以测试了，但是没想到就一直被打，直到 glibc
+2.34 版本，这些 hook 被彻底删除。
+inline hook的用法
+inline
+hook（内联钩子），是指在函数的代码当中的一个地方（一般是代码开头），写上跳转指令，跳转到我们执行的函数，跳转完成之后，为了保持函数正常运行我们可能会释放钩子（unhook），把程序放回原来的位置，或者是直接执行完自己的代码就结束。
+无条件跳转指令编码
+一般，无条件跳转指令编码为 E9 + 32位小端序整型（根据 %rip
+寄存器寻址），比如 E ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/29/syspro2/" title="《windows系统编程》——线程基础与相关结构">《windows系统编程》——线程基础与相关结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-28T16:00:00.000Z" title="发表于 2022-09-29 00:00:00">2022-09-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/winprogram/">winprogram</a></span></div><div class="content">跟着 rkvir 老师学学今天的知识，今天的课程是
+《Windows系统编程》——线程基础与相关结构
 
-
- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/09/29/Hook1-inline%20hook/" title="Hook专题1-inline hook">Hook专题1-inline hook</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-29T10:00:00.000Z" title="发表于 2022-09-29 18:00:00">2022-09-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/hook/">hook</a></span></div><div class="content">
-学一学 hook 专题，今天是 inline hook。
-
-
-
-## 课堂笔记
-
-### hook概念
-
-hook 就是钩子，是一种劫持技术，把原本执行的函数替换，替换为我自己的一个函数。当然在学 pwn 的时候，也有接触过 hook，就是 malloc_hook 和 free_hook。这些 hook 本意是为了开发者方便调试自己编写的 malloc 或者 free 函数去使用的，比如我自己写了一个 free 函数，我想测试一下性能，那我直接 **__free_hook=myfree** 就可以测试了，但是没想到就一直被打，直到  glibc 2.34 版本，这些 hook 被彻底删除。
-
-### inline hook的用法
-
-inline hook（内联钩子），是指在函数的代码当中的一个地方（一般是代码开头），写上跳转指令，跳转到我们执行的函数，跳转完成之后，为了保持函数正常运行我们可能会释放钩子（unhook），把程序放回原来的位置，或者是直接执行完自己的代码就结束。
-
-### 无条件跳转指令编码
-
-一般，无条件跳转指令编码为 E9 + 32位小端序整型（根据 %rip 寄存 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/09/29/syspro2/" title="《windows系统编程》——线程基础与相关结构">《windows系统编程》——线程基础与相关结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-28T16:00:00.000Z" title="发表于 2022-09-29 00:00:00">2022-09-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/winprogram/">winprogram</a></span></div><div class="content">
-跟着 rkvir 老师学学今天的知识，今天的课程是 《Windows系统编程》——线程基础与相关结构
-
-
-
-## 课堂笔记
-
-### 引入
-
+课堂笔记
+引入
 线程（Thread）就是程序执行的基本单元，一般我们写的程序只有一个线程。
-
 当两个事件之间相互没有关联，不会影响的情况下，我们可以采取多线程的方式去节省其空间。就好比小学三年级的课程，如何加速一个泡茶的过程，最主要就是烧水的时候我们大可不必傻傻的等水烧开，我们可以利用这个时间做别的事。
+1234567891011121314#single thread#include&lt;stdio.h&gt;int main()&#123;    for (size_t i = 0; i &lt; 20000; i++)    &#123;        printf(&quot;A execute for %d times\n&quot;, i);    &#125;    for (size_t i = 0; i &lt; 20000; i++)    &#123;        printf(&quot;B execute for %d times\n&quo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/28/Win_advanced_AD-1/" title="《windows高级攻防》——C语言基础">《windows高级攻防》——C语言基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-27T16:00:00.000Z" title="发表于 2022-09-28 00:00:00">2022-09-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/winprogram/">winprogram</a></span></div><div class="content">C 并没有太陌生，只是 win C 还是让我感觉有点陌生的。
 
-```c
-#single thread
-#include
-int main()
-{
-    for (size_t i = 0; i < 20000; i++)
-    {
-        printf("A execute for %d times\n", i);
-    }
-    for (size_t i = 0; i < 20000; i++)
-    {
-        printf("B execute for %d times\n", i);
-    }
-    getchar();
-}
-```
+课堂笔记
+C语言
+优势
 
-在这里，我们的两个循环很显然上面执行完了才会 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/09/28/Win_advanced_AD-1/" title="《windows高级攻防》——C语言基础">《windows高级攻防》——C语言基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-27T16:00:00.000Z" title="发表于 2022-09-28 00:00:00">2022-09-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/winprogram/">winprogram</a></span></div><div class="content">
-C 并没有太陌生，只是 win C 还是让我感觉有点陌生的。
+语法简洁，比低级语言更抽象级别更高。
+可移植性强，跨平台能力较好。
+用途广泛，Linux和Windows的内核均是 C 语言编写的。
+可操作性强，通过指针可以任意操控内存。
 
-
-
-## 课堂笔记
-
-### C语言
-
-### 优势
-
-1. 语法简洁，比低级语言更抽象级别更高。
-2. 可移植性强，跨平台能力较好。
-3. 用途广泛，Linux和Windows的内核均是 C 语言编写的。
-4. 可操作性强，通过指针可以任意操控内存。
-
-### C语言生成可执行文件的过程
-
+C语言生成可执行文件的过程
 源文件(.c)→目标文件(.obj)→通过链接器链接启动代码和库→可执行文件(.exe)
+链接分静态链接和动态链接，静态链接会把库的代码一并写入可执行文件当中，而动态链接依赖于
+runtime（运行时），也就是 dll。
+VS的使用
+VS2022在创建项目的时候并不能选择，可以先按照模板创建好之后，项目→属性→C/C++→预编译头中取消预编译头文件，然后删除它给的
+pch.cpp，删除里面的所有代码，只留一个 main.cpp 即可。
+在属性设置中，可以使用 Release/Debug 选择
+发行/调试版，发行版一般优化更多，调试版一般会包含调试信息，方便调试。
+在 项目→属性→C/C++→代码生成 当中的选项，运行库选择 MDd
+表示动态链接，MTd 表 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/28/syspro1/" title="《windows系统编程》——进程基础与相关结构">《windows系统编程》——进程基础与相关结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-27T16:00:00.000Z" title="发表于 2022-09-28 00:00:00">2022-09-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/winprogram/">winprogram</a></span></div><div class="content">跟着 rkvir 老师学学今天的知识，今天的课程是
+《Windows系统编程》——进程基础与相关结构
 
-链接分静态链接和动态链接，静态链接会把库的代码一并写入可执行文件当中，而动态链接依赖于 runtime（运行时），也就是 dll。
+课堂笔记
+系统管理进程所需的两个基本部分
 
-### VS的使用
+一个管理用的内核对象（进程句柄）
+一个包含代码数据的地址空间。
 
-VS2022在创建项目的时候并不能选择，可以先按照模板创建好之后，项目→属性→C/C++→预编译头中取消预编译头文件，然后删除它给的 pch.cpp，删除里面的所有代码，只留一个 main.cpp 即可。
+创建进程的实现
+CreateProcess
+说明
+宏定义实现，根据字符集选择调用 CreateProcessA 或者是
+CreateProcessW，实现了 ANSI
+版本的创建和宽字符版的进程创建，返回一个进程句柄。
+参数
 
-在属性设置中，可以使用 Release/Debug 选择 发行/调试版，发行版一般优化更多，调试版一般会包含调试信息，方便调试。
-
-在 项目→属性→C/C++→代码生成 当中的选项，运 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/09/28/syspro1/" title="《windows系统编程》——进程基础与相关结构">《windows系统编程》——进程基础与相关结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-27T16:00:00.000Z" title="发表于 2022-09-28 00:00:00">2022-09-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/">ctf</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/">reverse</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf/reverse/winprogram/">winprogram</a></span></div><div class="content">
-跟着 rkvir 老师学学今天的知识，今天的课程是 《Windows系统编程》——进程基础与相关结构
-
-
-
-## 课堂笔记
-
-### 系统管理进程所需的两个基本部分
-
-1. 一个管理用的内核对象（进程句柄）
-2. 一个包含代码数据的地址空间。
-
-### 创建进程的实现
-
-#### CreateProcess
-
-##### 说明
-
-宏定义实现，根据字符集选择调用 CreateProcessA 或者是 CreateProcessW，实现了 ANSI 版本的创建和宽字符版的进程创建，返回一个进程句柄。
-
-##### 参数
-
-1. lpApplicationName：想要执行的可执行文件的路径
-1. lpCommand：命令行参数，可以传 NULL 表示没有参数
-1. lpProcessAttributes：进程安全属性，传 NULL 表示默认
-1. lpThreadAttributes：线程安全属性，传 NULL 表示默认
-1. bInheritHandles：表示句柄是否可以被继承
-1. dwCreationFlags：创建的新进程的标志
-1. lpEnvironment：环境变量
-1. ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/16/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/#content-inner">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/#content-inner">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/#content-inner">28</a><a class="extend next" rel="next" href="/page/18/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><a href="/"> <div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div></a><div class="author-info__name">xia0ji233</div><div class="author-info__description">Nepnep team</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">274</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">173</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xia0ji233"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xia0ji233" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xia0ji233@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">老当益壮，宁移白首之心？穷且益坚，不坠青云之志。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/30/tencent-race-2020-pre/" title="腾讯游戏安全大赛2020初赛题解">腾讯游戏安全大赛2020初赛题解</a><time datetime="2024-03-29T17:00:00.000Z" title="发表于 2024-03-30 01:00:00">2024-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/21/tencent-race-2022-final/" title="腾讯游戏安全大赛2022决赛题解">腾讯游戏安全大赛2022决赛题解</a><time datetime="2024-03-21T15:00:00.000Z" title="发表于 2024-03-21 23:00:00">2024-03-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/19/tencent-race-2022-pre/" title="腾讯游戏安全大赛2022初赛题解">腾讯游戏安全大赛2022初赛题解</a><time datetime="2024-03-19T15:00:00.000Z" title="发表于 2024-03-19 23:00:00">2024-03-19</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/13/CVE-2021-4145/" title="dirty cred(CVE-2021-4145)漏洞复现">dirty cred(CVE-2021-4145)漏洞复现</a><time datetime="2024-03-13T15:00:00.000Z" title="发表于 2024-03-13 23:00:00">2024-03-13</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/04/LLVM5/" title="LLVM——交叉编译的配置">LLVM——交叉编译的配置</a><time datetime="2024-03-04T12:00:00.000Z" title="发表于 2024-03-04 20:00:00">2024-03-04</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+lpApplicationName：想要执行的可执行文件的路径
+lpCommand：命令行参数，可以传 NULL 表示没有参数
+lpProcessAttributes：进程安全属性，传 NULL 表示默认
+lpThreadAttributes：线程安全属性，传 NULL 表示默认
+bInheritHandles：表示句柄是否可以被继承
+dwCreationFlags：创建的新进程的标志
+lpEnvironment：环境变量
+lpCurrentDirectory：指定当前目录
+lpStartInfo：指定 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/16/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/#content-inner">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/#content-inner">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/#content-inner">28</a><a class="extend next" rel="next" href="/page/18/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><a href="/"> <div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div></a><div class="author-info__name">xia0ji233</div><div class="author-info__description">Nepnep team</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">274</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">173</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xia0ji233"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xia0ji233" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xia0ji233@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">老当益壮，宁移白首之心？穷且益坚，不坠青云之志。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/30/tencent-race-2020-pre/" title="腾讯游戏安全大赛2020初赛题解">腾讯游戏安全大赛2020初赛题解</a><time datetime="2024-03-29T17:00:00.000Z" title="发表于 2024-03-30 01:00:00">2024-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/21/tencent-race-2022-final/" title="腾讯游戏安全大赛2022决赛题解">腾讯游戏安全大赛2022决赛题解</a><time datetime="2024-03-21T15:00:00.000Z" title="发表于 2024-03-21 23:00:00">2024-03-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/19/tencent-race-2022-pre/" title="腾讯游戏安全大赛2022初赛题解">腾讯游戏安全大赛2022初赛题解</a><time datetime="2024-03-19T15:00:00.000Z" title="发表于 2024-03-19 23:00:00">2024-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/13/CVE-2021-4145/" title="dirty cred(CVE-2021-4145)漏洞复现">dirty cred(CVE-2021-4145)漏洞复现</a><time datetime="2024-03-13T15:00:00.000Z" title="发表于 2024-03-13 23:00:00">2024-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/04/LLVM5/" title="LLVM——交叉编译的配置">LLVM——交叉编译的配置</a><time datetime="2024-03-04T12:00:00.000Z" title="发表于 2024-03-04 20:00:00">2024-03-04</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             <a class="card-more-btn" href="/categories/" title="查看更多">
@@ -403,8 +301,8 @@ VS2022在创建项目的时候并不能选择，可以先按照模板创建好�
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AdvancedMath/"><span class="card-category-list-name">AdvancedMath</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AdvancedMath/Fourier-Serials/"><span class="card-category-list-name">Fourier-Serials</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">16</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E7%9A%84%E7%89%B9%E6%80%A7/"><span class="card-category-list-name">C++的特性</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/LLVM/"><span class="card-category-list-name">LLVM</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/OOP/"><span class="card-category-list-name">OOP</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/Windows/"><span class="card-category-list-name">Windows</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/%E6%A8%A1%E6%9D%BF/"><span class="card-category-list-name">模板</span><span class="card-category-list-count">2</span></a></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/RSA/" style="font-size: 1.15em; color: rgb(174, 156, 116)">RSA</a><a href="/tags/AES/" style="font-size: 1.15em; color: rgb(58, 185, 137)">AES</a><a href="/tags/DNS/" style="font-size: 1.15em; color: rgb(10, 109, 185)">DNS</a><a href="/tags/flask/" style="font-size: 1.15em; color: rgb(142, 119, 190)">flask</a><a href="/tags/HITCTF/" style="font-size: 1.22em; color: rgb(175, 156, 121)">HITCTF</a><a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" style="font-size: 1.15em; color: rgb(177, 130, 48)">内网渗透</a><a href="/tags/Web%E6%BC%8F%E6%B4%9E/" style="font-size: 1.15em; color: rgb(76, 43, 178)">Web漏洞</a><a href="/tags/LLVM/" style="font-size: 1.15em; color: rgb(84, 155, 122)">-LLVM</a><a href="/tags/LLVM/" style="font-size: 1.38em; color: rgb(157, 99, 7)">LLVM</a><a href="/tags/Substitution/" style="font-size: 1.15em; color: rgb(64, 199, 137)">Substitution</a><a href="/tags/Linux/" style="font-size: 1.3em; color: rgb(96, 196, 163)">Linux</a><a href="/tags/Kernel/" style="font-size: 1.15em; color: rgb(151, 24, 33)">Kernel</a><a href="/tags/Socket/" style="font-size: 1.15em; color: rgb(85, 196, 92)">Socket</a><a href="/tags/Net-Program/" style="font-size: 1.15em; color: rgb(80, 108, 117)">Net-Program</a><a href="/tags/base64/" style="font-size: 1.15em; color: rgb(158, 89, 39)">base64</a><a href="/tags/ptrace/" style="font-size: 1.15em; color: rgb(137, 38, 126)">ptrace</a><a href="/tags/fastbin-reverse-into-tcache/" style="font-size: 1.15em; color: rgb(60, 136, 93)">fastbin_reverse_into_tcache</a><a href="/tags/XYcup/" style="font-size: 1.15em; color: rgb(158, 151, 113)">XYcup</a><a href="/tags/awd/" style="font-size: 1.15em; color: rgb(166, 33, 3)">awd</a><a href="/tags/hook/" style="font-size: 1.15em; color: rgb(76, 39, 109)">hook</a><a href="/tags/global-max-fast/" style="font-size: 1.15em; color: rgb(114, 8, 139)">global_max_fast</a><a href="/tags/pwnable-kr/" style="font-size: 1.45em; color: rgb(4, 65, 199)">pwnable.kr</a><a href="/tags/Binary-Serach/" style="font-size: 1.15em; color: rgb(114, 18, 161)">Binary-Serach</a><a href="/tags/operator-priority/" style="font-size: 1.15em; color: rgb(78, 63, 42)">operator priority</a><a href="/tags/bash/" style="font-size: 1.15em; color: rgb(164, 61, 78)">bash</a><a href="/tags/shellshock/" style="font-size: 1.15em; color: rgb(159, 120, 96)">shellshock</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">274</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-04-25T00:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">470.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-04-09T05:23:31.549Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2024 By xia0ji233</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">welcome to my blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/RSA/" style="font-size: 1.15em; color: rgb(10, 32, 115)">RSA</a><a href="/tags/AES/" style="font-size: 1.15em; color: rgb(91, 148, 175)">AES</a><a href="/tags/DNS/" style="font-size: 1.15em; color: rgb(87, 162, 173)">DNS</a><a href="/tags/flask/" style="font-size: 1.15em; color: rgb(106, 151, 88)">flask</a><a href="/tags/HITCTF/" style="font-size: 1.22em; color: rgb(181, 183, 200)">HITCTF</a><a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" style="font-size: 1.15em; color: rgb(197, 162, 142)">内网渗透</a><a href="/tags/Web%E6%BC%8F%E6%B4%9E/" style="font-size: 1.15em; color: rgb(38, 108, 52)">Web漏洞</a><a href="/tags/LLVM/" style="font-size: 1.38em; color: rgb(123, 101, 22)">LLVM</a><a href="/tags/Substitution/" style="font-size: 1.15em; color: rgb(65, 177, 150)">Substitution</a><a href="/tags/LLVM/" style="font-size: 1.15em; color: rgb(99, 20, 132)">-LLVM</a><a href="/tags/Linux/" style="font-size: 1.3em; color: rgb(79, 128, 106)">Linux</a><a href="/tags/Socket/" style="font-size: 1.15em; color: rgb(137, 148, 157)">Socket</a><a href="/tags/Net-Program/" style="font-size: 1.15em; color: rgb(96, 122, 64)">Net-Program</a><a href="/tags/base64/" style="font-size: 1.15em; color: rgb(56, 198, 51)">base64</a><a href="/tags/Kernel/" style="font-size: 1.15em; color: rgb(155, 72, 83)">Kernel</a><a href="/tags/ptrace/" style="font-size: 1.15em; color: rgb(165, 41, 91)">ptrace</a><a href="/tags/fastbin-reverse-into-tcache/" style="font-size: 1.15em; color: rgb(15, 89, 59)">fastbin_reverse_into_tcache</a><a href="/tags/XYcup/" style="font-size: 1.15em; color: rgb(36, 183, 49)">XYcup</a><a href="/tags/awd/" style="font-size: 1.15em; color: rgb(89, 119, 167)">awd</a><a href="/tags/hook/" style="font-size: 1.15em; color: rgb(79, 16, 170)">hook</a><a href="/tags/global-max-fast/" style="font-size: 1.15em; color: rgb(10, 109, 68)">global_max_fast</a><a href="/tags/pwnable-kr/" style="font-size: 1.45em; color: rgb(113, 169, 7)">pwnable.kr</a><a href="/tags/Binary-Serach/" style="font-size: 1.15em; color: rgb(159, 162, 59)">Binary-Serach</a><a href="/tags/operator-priority/" style="font-size: 1.15em; color: rgb(70, 9, 132)">operator priority</a><a href="/tags/bash/" style="font-size: 1.15em; color: rgb(18, 105, 13)">bash</a><a href="/tags/shellshock/" style="font-size: 1.15em; color: rgb(89, 119, 0)">shellshock</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">274</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-04-25T00:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">617.2k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-04-09T05:34:50.157Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2024 By xia0ji233</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">welcome to my blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
   init: (str) => {
     window.typed = new Typed('#subtitle', Object.assign({
       strings: str,
